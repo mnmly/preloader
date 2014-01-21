@@ -1,0 +1,23 @@
+{
+  "name": "preloader",
+  "repo": "mnmly/preloader",
+  "description": "Worker based preloader",
+  "version": "0.0.1",
+  "keywords": ["preload", "worker", "image"],
+  "dependencies": {
+    "component/map": "*",
+    "component/each": "*",
+    "component/emitter": "*",
+    "yyx990803/workerify": "*"
+  },
+  "development": {
+    "chaijs/chai": "*"
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "worker-script.js"
+  ]
+}
+
