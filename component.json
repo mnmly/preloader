@@ -2,7 +2,7 @@
   "name": "preloader",
   "repo": "mnmly/preloader",
   "description": "Worker based preloader",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": ["preload", "worker", "image"],
   "dependencies": {
     "component/map": "*",
