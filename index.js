@@ -21,7 +21,7 @@ function Preloader(){
 }
 
 
-Preloader.prototype.origin = window.location.origin;
+Preloader.prototype.base = window.location.origin;
 
 /**
  * Install Emitter
@@ -111,13 +111,19 @@ Preloader.prototype.loadAsUsual = function(urls){
   var len = urls.length;
   var count = 0;
 
-  each(urls, function(url){
+  each(urls, function(url, i){
     var img = new Image();
     img.src = url;
     img.onload = function(){
       count++;
+      var msg = {
+        msg: count < len ? 'next' : 'end',
+        value: count / len,
+        index: i,
+        url: url
+      };
       if(count <= len){
-        self._progress(count / len);
+        self._progress(msg);
         if(count === len) self._end();
       }
     };

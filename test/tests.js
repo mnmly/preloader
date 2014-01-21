@@ -22,7 +22,7 @@ describe('Preloader', function(){
   
   it ('should have origin', function(){
     var preloader = new Preloader();
-    preloader.should.have.property('origin');
+    preloader.should.have.property('base');
   });
 
   it ('should have load method', function(){
@@ -34,7 +34,7 @@ describe('Preloader', function(){
 
     var preloader = new Preloader();
     var urls = ['images/test-01.jpg', 'images/test-02.jpg'];
-    preloader.origin = window.location.href.replace(/\/$/, '');
+    preloader.base = window.location.href.replace(/\/$/, '');
 
     preloader.should.have.property('on');
     preloader.load(urls);
