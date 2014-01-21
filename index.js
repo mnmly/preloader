@@ -69,7 +69,7 @@ Preloader.prototype.load = function(urls){
  */
 
 Preloader.prototype.onmessage = function(e){
-  this._next(e.data);
+  this._progress(e.data);
   if('end' === e.data.msg) return this._end();
 };
 
@@ -82,8 +82,8 @@ Preloader.prototype.onmessage = function(e){
  * @api private
  */
 
-Preloader.prototype._next = function(e){
-  this.emit('next', e);
+Preloader.prototype._progress = function(e){
+  this.emit('progress', e);
 };
 
 
@@ -117,7 +117,7 @@ Preloader.prototype.loadAsUsual = function(urls){
     img.onload = function(){
       count++;
       if(count <= len){
-        self._next(count / len);
+        self._progress(count / len);
         if(count === len) self._end();
       }
     };

@@ -39,7 +39,7 @@ describe('Preloader', function(){
     preloader.should.have.property('on');
     preloader.load(urls);
 
-    preloader.on('next', function(e){
+    preloader.on('progress', function(e){
       e.value.should.be.a('number');
       e.index.should.be.a('number');
       e.url.should.be.a('string');
